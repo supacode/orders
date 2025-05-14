@@ -53,14 +53,20 @@ export const OrdersTableFilter: React.FC<{
           )}
         </div>
         <div className="flex flex-col gap-2 p-2">
-          {options.map((option) => (
-            <AppCheckbox
-              key={option}
-              label={`${option}`}
-              checked={selected.includes(option)}
-              onChange={() => toggleOption(option)}
-            />
-          ))}
+          {[...options]
+            .sort((a, b) =>
+              typeof a === 'number' && typeof b === 'number'
+                ? a - b
+                : `${a}`.localeCompare(`${b}`),
+            )
+            .map((option) => (
+              <AppCheckbox
+                key={option}
+                label={`${option}`}
+                checked={selected.includes(option)}
+                onChange={() => toggleOption(option)}
+              />
+            ))}
         </div>
       </div>
     </AppPopover>
