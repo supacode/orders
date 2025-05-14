@@ -77,9 +77,11 @@ export const OrdersContainer: React.FC = () => {
         key: 'status',
         header: 'Status',
         render: (order) => (
-          <div className="flex gap-2">
+          <div className=" gap-2">
             <span>L: {order.statusLeft}</span>
-            <span>|</span>
+
+            <br />
+
             <span>R: {order.statusRight}</span>
           </div>
         ),

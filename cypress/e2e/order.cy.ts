@@ -105,15 +105,15 @@ describe('Orders Management', () => {
     cy.contains('button', filterLabel).click();
   };
 
-  function savePreset(name: string) {
+  const savePreset = (name: string) => {
     cy.get('input[placeholder="Preset name"]').type(name);
     cy.contains('button', 'Save Preset').click();
-  }
+  };
 
-  function verifyColumnOrder(
+  const verifyColumnOrder = (
     property: keyof (typeof orders)[0],
     direction: 'asc' | 'desc',
-  ) {
+  ) => {
     const expected = orders
       .map((o) => o[property])
       .sort((a, b) =>
@@ -131,9 +131,9 @@ describe('Orders Management', () => {
         ).to.eql(expected.map(Number).sort((a, b) => a - b));
       },
     );
-  }
+  };
 
-  function getColumnIndex(property: string): number {
+  const getColumnIndex = (property: string): number => {
     const columns = [
       'oid',
       'status',
@@ -145,5 +145,5 @@ describe('Orders Management', () => {
       'designer',
     ];
     return columns.indexOf(property) + 1;
-  }
+  };
 });

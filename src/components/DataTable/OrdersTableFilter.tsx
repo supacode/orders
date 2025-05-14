@@ -1,6 +1,7 @@
 import { AppButton } from '../../components/ui/AppButton';
 import { AppCheckbox } from '../../components/ui/AppCheckbox';
 import { AppPopover } from '../../components/ui/AppPopover';
+import { compareValues } from '../../utils/compareValues';
 
 export const OrdersTableFilter: React.FC<{
   label: string;
@@ -54,11 +55,7 @@ export const OrdersTableFilter: React.FC<{
         </div>
         <div className="flex flex-col gap-2 p-2">
           {[...options]
-            .sort((a, b) =>
-              typeof a === 'number' && typeof b === 'number'
-                ? a - b
-                : `${a}`.localeCompare(`${b}`),
-            )
+            .sort((a, b) => compareValues(a, b))
             .map((option) => (
               <AppCheckbox
                 key={option}
