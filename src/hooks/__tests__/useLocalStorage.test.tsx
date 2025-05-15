@@ -16,7 +16,7 @@ const TestComponent = ({
 
   useEffect(() => {
     if (newValue) setValue(newValue);
-  }, [newValue, setValue]);
+  }, [newValue]);
 
   return <div data-testid="output">{value}</div>;
 };

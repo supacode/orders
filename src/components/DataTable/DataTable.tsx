@@ -2,7 +2,7 @@ import { useCallback, useMemo, type ReactNode } from 'react';
 import { decodeParam } from '../../utils/decodeParam';
 import { compareValues } from '../../utils/compareValues';
 import { AppButton } from '../ui/AppButton';
-import { OrdersTableFilter } from './OrdersTableFilter';
+import { OrdersTableFilter } from '../../features/orders/OrdersTableFilter';
 import * as Table from '../ui/AppTable';
 import { encodeParam } from '../../utils/encodeParam';
 

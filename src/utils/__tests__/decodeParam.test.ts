@@ -3,13 +3,13 @@ import { decodeParam } from '../decodeParam';
 
 describe('decodeParam', () => {
   it('decodes basic URI-encoded strings', () => {
-    expect(decodeParam('abc%20xyz')).toBe('abc xyz');
-    expect(decodeParam('dy%3Ddx')).toBe('dy=dx');
+    expect(decodeParam('hello%20world')).toBe('hello world');
+    expect(decodeParam('foo%3Dbar')).toBe('foo=bar');
   });
 
   it('replaces + with space before decoding', () => {
-    expect(decodeParam('abc+xyz')).toBe('abc xyz');
-    expect(decodeParam('abc+xyz%21')).toBe('abc xyz!');
+    expect(decodeParam('hello+world')).toBe('hello world');
+    expect(decodeParam('foo+bar%21')).toBe('foo bar!');
   });
 
   it('returns original value if decoding fails', () => {

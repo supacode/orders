@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { AppInput } from '../AppInput';
+import { AppInput } from './AppInput';
 import { describe, it, expect, vi } from 'vitest';
 
 describe('AppInput', () => {

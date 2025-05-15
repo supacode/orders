@@ -6,11 +6,13 @@ import { AppInput } from '../../components/ui/AppInput';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import type { Preset } from './types';
 
-type OrdersPresetProps = {
+type PresetManagerProps = {
   searchParams: URLSearchParams;
 };
 
-export const OrdersPreset: React.FC<OrdersPresetProps> = ({ searchParams }) => {
+export const OrdersPreset: React.FC<PresetManagerProps> = ({
+  searchParams,
+}) => {
   const [presets, setPresets] = useLocalStorage<Preset[]>(
     'orders-table-presets',
     [],

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { AppCheckbox } from '../AppCheckbox';
+import { AppCheckbox } from './AppCheckbox';
 import { describe, it, expect, vi } from 'vitest';
 
 describe('AppCheckbox', () => {
